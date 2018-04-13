@@ -282,12 +282,6 @@ func columnToFieldIndex(m *DbMap, t reflect.Type, name string, cols []string) ([
 			missingColNames = append(missingColNames, colName)
 		}
 	}
-	if len(missingColNames) > 0 {
-		return colToFieldIndex, &NoFieldInTypeError{
-			TypeName:        t.Name(),
-			MissingColNames: missingColNames,
-		}
-	}
 	return colToFieldIndex, nil
 }
 
